@@ -32,7 +32,7 @@ The returned array would be [1, 2, 3, 4, 5, 6].
 /* Solution */
 function nonMutatingConcat(original, attach) {
   // Only change code below this line
-
+  return original.concat(second);
 
   // Only change code above this line
 }
