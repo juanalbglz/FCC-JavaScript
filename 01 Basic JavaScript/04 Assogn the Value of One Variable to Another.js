@@ -16,7 +16,7 @@ The above declares a myVar variable with no value, then assigns it the value 5. 
 
 
 /* Exercise*/
-//TODO Assign the contents of a to variable b.
+//COMPLETE Assign the contents of a to variable b.
 
 
 /* Initial content

@@ -10,15 +10,15 @@ When JavaScript variables are declared, they have an initial value of undefined.
 
 
 /* Exercise*/
-//TODO nitialize the three variables a, b, and c with 5, 10, and "I am a" respectively so that they will not be undefined.
+//COMPLETE nitialize the three variables a, b, and c with 5, 10, and "I am a" respectively so that they will not be undefined.
 
-//[ ] a should be defined and evaluated to have the value of 6.
+//[x] a should be defined and evaluated to have the value of 6.
 
-//[ ] b should be defined and evaluated to have the value of 15.
+//[x] b should be defined and evaluated to have the value of 15.
 
-//[ ] c should not contain undefined and should have a value of the string I am a String!
+//[x] c should not contain undefined and should have a value of the string I am a String!
 
-//[ ] You should not change code below the specified comment.
+//[x] You should not change code below the specified comment.
 
 
 /* Initial content

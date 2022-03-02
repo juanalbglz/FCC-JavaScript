@@ -15,9 +15,9 @@ var myName = "your name";
 
 
 /* Exercise*/
-//TODO Create two new string variables: myFirstName and myLastName and assign them the values of your first and last name, respectively.
-//[ ] myFirstName should be a string with at least one character in it.
-//[ ] myLastName should be a string with at least one character in it.
+//COMPLETE Create two new string variables: myFirstName and myLastName and assign them the values of your first and last name, respectively.
+//[x] myFirstName should be a string with at least one character in it.
+//[x] myLastName should be a string with at least one character in it.
 
 
 /* Solution */
