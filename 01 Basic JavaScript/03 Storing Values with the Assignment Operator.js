@@ -18,7 +18,7 @@ First, this code creates a variable named myVar. Then, the code assigns 5 to myV
 
 
 /* Exercise*/
-//TODO Assign the value 7 to variable a.
+//COMPLETE Assign the value 7 to variable a.
 
 
 /* Initial content
