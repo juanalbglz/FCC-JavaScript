@@ -1,5 +1,5 @@
 /*
-Title:  When
+Title:  Escaping Literal Quotes in Strings
 URL:    https://www.freecodecamp.org/learn/javascript-algorithms-and-data-structures/basic-javascript/escaping-literal-quotes-in-strings
 */
 
@@ -16,7 +16,7 @@ Alan said, "Peter is learning JavaScript".
 
 
 /* Exercise*/
-//COMPLETE CUse backslashes to assign a string to the myStr variable so that if you were to print it to the console, you would see:
+//COMPLETE Use backslashes to assign a string to the myStr variable so that if you were to print it to the console, you would see:
 
 //NOTE I am a "double quoted" string inside "double quotes".
 
