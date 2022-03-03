@@ -43,4 +43,7 @@ const secondToLastLetterOfLastName = lastName; // Change this line
 const lastName = "Lovelace";
 
 // Only change code below this line
-const secondToLastLetterOfLastName = lastName[lastName.length -3]; // Change this line
+const secondToLastLetterOfLastName = lastName[lastName.length -2]; // Change this line
+
+
+//BUG: FCC second-to-last means different positions for us english and uk english
