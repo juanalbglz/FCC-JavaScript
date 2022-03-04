@@ -83,7 +83,29 @@ const recordCollection = {
 
 // Only change code below this line
 function updateRecords(records, id, prop, value) {
+  //If value is an empty string, delete the given prop property from the album.
+  if (value == ""){
+    delete records[id][prop];
+  } 
+    else 
+  {
+  //If prop is tracks and value isn't empty, push.
+    if (prop == "tracks"){
+      //If tracks is not created, create new array
+      if (records[id].hasOwnProperty('tracks')==false){
+        records[id][prop] = []
+      }
+      //Push value to Array
+      records[id][prop].push(value)
+    } 
+      else 
+    {
+      //If property does not exist, create it and assign it
+      if (records[id].hasOwnProperty(prop)==false){
+        records[id][prop] = value;
+      }
+    }
+  }
   return records;
 }
-
-updateRecords(recordCollection, 5439, 'artist', 'ABBA');
+console.log(updateRecords(recordCollection, 5439, "artist", "ABBA"))
