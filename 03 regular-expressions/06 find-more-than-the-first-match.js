@@ -37,5 +37,6 @@ URL:    https://www.freecodecamp.org/learn/javascript-algorithms-and-data-struct
 
 /* Solution */
 let twinkleStar = "Twinkle, twinkle, little star";
-let starRegex = /change/; // Change this line
-let result = twinkleStar; // Change this line
+let starRegex = /twinkle/ig; // Change this line
+let result = twinkleStar.match(starRegex); // Change this line
+console.log(result);

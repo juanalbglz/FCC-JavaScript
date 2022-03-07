@@ -39,6 +39,7 @@ URL:    https://www.freecodecamp.org/learn/javascript-algorithms-and-data-struct
 
 
 /* Solution */
-let extractStr = "Extract the word 'coding' from this string.";
-let codingRegex = /coding/; // Change this line
-let result = extractStr.match(codingRegex); // Change this line
+let quoteSample = "Beware of bugs in the above code; I have only proved it correct, not tried it.";
+let vowelRegex = /[aeiou]/ig; // Change this line
+let result = quoteSample.match(vowelRegex); // Change this line
+console.log(result)
