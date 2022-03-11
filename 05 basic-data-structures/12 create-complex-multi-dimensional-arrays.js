@@ -64,9 +64,9 @@
 
 /* Solution */
 
-let myNestedArray = [
+let myNestedArray = ['first level deep',
   // Only change code below this line
-  ['unshift', false, 1, 2, 3, 'complex', 'nested', ['deep', ['deeper', ['deepest', ]]]],
+  ['second level deep', false, 1, 2, 3, 'complex', 'nested', ['third level deep', 'deep', ['fourth level deep','deeper', ['fifth level deep','deepest', ]]]],
   ['loop', 'shift', 6, 7, 1000, 'method'],
   ['concat', false, true, 'spread', 'array'],
   ['mutate', 1327.98, 'splice', 'slice', 'push'],

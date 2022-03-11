@@ -41,9 +41,11 @@ firstLetterOfLastName = lastName; // Change this line
 
 
 /* Solution */
-// Setup
-let firstLetterOfLastName = "";
-const lastName = "Lovelace";
+/* Solution */
+function confirmEnding(str, target) {
+  //get ending string from str.length - target.length to compare after
+  let strEnd = (str.slice(str.length-target.length, str.length));
+  return (target == strEnd)? true : false;
+}
 
-// Only change code below this line
-firstLetterOfLastName = lastName[0]; // Change this line
+console.log(confirmEnding("Bastian", "n"));
