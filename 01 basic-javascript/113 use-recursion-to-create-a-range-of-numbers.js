@@ -9,7 +9,7 @@ URL:    https://www.freecodecamp.org/learn/javascript-algorithms-and-data-struct
 
 
 /* Exercise*/
-//TODO We have defined a function named rangeOfNumbers with two parameters. The function should return an array of integers which begins with a number represented by the startNum parameter and ends with a number represented by the endNum parameter. The starting number will always be less than or equal to the ending number. Your function must use recursion by calling itself and not use loops of any kind. It should also work for cases where both startNum and endNum are the same.
+//COMPLETE We have defined a function named rangeOfNumbers with two parameters. The function should return an array of integers which begins with a number represented by the startNum parameter and ends with a number represented by the endNum parameter. The starting number will always be less than or equal to the ending number. Your function must use recursion by calling itself and not use loops of any kind. It should also work for cases where both startNum and endNum are the same.
 //[x] Your function should return an array.
 //[x] Your code should not use any loop syntax (for or while or higher order functions such as forEach, map, filter, or reduce).
 //[x] rangeOfNumbers should use recursion (call itself) to solve this challenge.
