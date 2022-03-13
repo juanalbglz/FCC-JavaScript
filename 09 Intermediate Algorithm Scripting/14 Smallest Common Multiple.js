@@ -21,197 +21,89 @@ URL:    https://www.freecodecamp.org/learn/javascript-algorithms-and-data-struct
 
 
 /* Solution */
-/* function smallestCommons(arr) {
-  //
-  function ordered(arr){
-    // assign max and min
-    let max = Math.max.apply(null, arr);
-    let min = Math.min.apply(null, arr);
-    return [min, max];
+//return array with max and min values of an input array
+function orderArr(arr){
+  // assign max and min
+  if (arr.length == 1){
+    return arr;
+  } else {
+    return([Math.min.apply(null, arr), Math.max.apply(null, arr)])
   }
-  //order the array
-
-
-  //build array of numbers
-  function numbers(arr){
-    //create a new array
-    let numbers = [];
-    //fill the array from min to max
-    for (let i = arr[0]; i <=arr[1]; i++){
-      numbers.push(i)
-    }
-    return numbers;
-  }
-  let fArr = numbers(oArr);
-
-
-  //check if a number is prime
-  function isPrime(n){
-    //1 case as prime
-    if (n === 1) {
-      return true;
-    } else {
-      for (let num = 2; num < n; num++){
-        //if divisioble by another number not prime
-        if (n % num == 0){
-          return false;
-        }   
-      }
-    }
-    //if after going the for was not prime, then it is prime
-    return true;
-    }
-
-
-    //find all primes lower or equal max value
-    //if object passed return it, else return object
-    function primes(n, obj={}){
-      for(let num = 1; num <= n; num++){
-        if(isPrime(num)){
-          //add obj property
-          obj[num] = 0;
-        }
-      }
-      return obj;
-    }
-
-
-    //factorize a number
-    //factorize a number
-    function factorize(n, obj={}){
-      for (let i in obj) {
-        if (n%parseInt(i) == 0){
-          obj[i]+= 1
-        }
-      }
-      return obj;
-    }
-
-    //define ordered array
-    console.log(arr);
-    const oArr = ordered(arr);    
-    console.log(oArr);
-    let factors = primes(fArr[fArr.length-1])
-    for (let element of fArr){
-      factorize(element, factors)
-    }
-    console.log(factorize(5, factors))
 }
 
-smallestCommons([1,5]); */
+//given an array create all correlative values between its min and max values
+function numbersIn(arr){
+  let numbers = [];
+  let auxArr = orderArr(arr);
+  //fill the array from min to max
+  for (let i = auxArr[0]; i <=auxArr[1]; i++){
+    numbers.push(i)
+  }
+  return numbers;
+}
 
-
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-  
-function smallestCommons(arr) {
-
-  function orderArr(arr){
-    // assign max and min
-    if (arr.length == 1){
-      return arr;
-    } else {
-      return([Math.min.apply(null, arr), Math.max.apply(null, arr)])
+//check any number if its prime or not
+function isPrime(n){
+  let prime = true;
+  if (n === 1) {
+    prime = true;
+  } else {
+    for (let num = 2; num < n; num++){
+      if (n % num == 0){
+        prime = false;
+      }   
     }
   }
+  return prime;
+}
 
-  function numbersIn(arr){
-    //create a new array
-    let numbers = [];
-    //fill the array from min to max
-    for (let i = arr[0]; i <=arr[1]; i++){
-      numbers.push(i)
-    }
-    return numbers;
+//create an object with all primes lower than n
+function primeObj(n, obj={}){
+  for (let i=1; i <= n; i++){
+    isPrime(i)? obj[i]=0:false;
   }
+  return obj;
+}
 
-  function isPrime(n){
-    //1 case as prime
-    if (n === 1) {
-      return true;
-    } else {
-      for (let num = 2; num < n; num++){
-        //if divisioble by another number not prime
-        if (n % num == 0){
-          return false;
-        }   
-      }
-    }
-    //if after going the for was not prime, then it is prime
-    return true;
-  }
-
-  function primeObj(n, obj={}){
-    for (let i=1; i <= n; i++){
-      isPrime(i)? obj[i]=0:false;
-    }
+//factorize a number
+function factorize(n, obj=primeObj(n)){
+  let aux = n;
+  if (isPrime(aux)){
+    obj[aux]=1;
     return obj;
-  }
-
-//is only checking once
-  function factorize(n, obj=primeObj(n)){
+  } else {
     for (let i in obj) {
-      if (n%i == 0){
-        obj[i]+=1
-        factorize(n/i, obj)
+      if (aux%i==0 && i>1){
+        while (aux%i==0 && aux>1){
+          aux = aux/i;
+          obj[i] += 1;
+        }
       }
     }
-    return obj;
+    obj[1]+= 1;
   }
-  
-  //order the array
-  const array = orderArr(arr)
-    //console.log(array);
-  //get the last value as already ordered
-  const max = arr[arr.length-1];
-    //console.log(max);
-  //create an object with all prime numbers lower than max
-  const factors = primeObj(max);
+  return obj;
+}
+
+
+function smallestCommons(arr) {
   //create the span of numbers to treat
-  const span = numbersIn(array);
-    //console.log(span);
+  const span = numbersIn(arr);
+  //create an object with all prime numbers lower than max
+  const factors = primeObj(span[span.length-1]);
   //factorize each number in the span
   for (let n of span){
-      //console.log(`n = ${n}`)
     //define a temporal object for each n
-    let nFactors = factorize(n);    
-      console.log(nFactors, factors)
-    //iterate properties in nFactors and add max values to factors object
-    const keys = Object.keys(nFactors);
-      //console.log(keys)
-    keys.forEach((key) => {
-    if (nFactors[key] > 0 && nFactors[key] > factors[key]){
-      factors[key] = nFactors[key];
-    }
-    });
+    let nFactors = factorize(n);
+    for (let key in nFactors){
+      if (nFactors[key] > factors[key]){
+        factors[key] = nFactors[key];
+      }
+    }    
   }
-    //multiply all values and return the result
-    const keys = Object.keys(factors);
-    console.log(keys);
-    console.log(factors)
-    let result = 1;
-    keys.forEach((key) => {
-      console.log(key,factors[key])
-      result *= key*factors[key];
-    });
-    return result;
-    }
-
-  console.log(smallestCommons([1,5]))
-
-//TODO change obj so that is affected the prototype? for primes
-//TODO mcm evaluate each property and set only max values
-//TODO mcm multiplicate max values of each prime
+  let mcm = 1;
+  for (let key in factors){
+    mcm *= Math.pow(key, factors[key]);
+  }
+  return mcm;
+}

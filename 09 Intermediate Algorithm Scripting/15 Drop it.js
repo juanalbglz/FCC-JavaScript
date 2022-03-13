@@ -9,9 +9,9 @@ URL:    https://www.freecodecamp.org/learn/javascript-algorithms-and-data-struct
 
 
 /* Exercise*/
-//TODO Given the array arr, iterate through and remove each element starting from the first element (the 0 index) until the function func returns true when the iterated element is passed through it.
+//COMPLETE Given the array arr, iterate through and remove each element starting from the first element (the 0 index) until the function func returns true when the iterated element is passed through it.
 
-//TODO Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.
+//COMPLETE Then return the rest of the array once the condition is satisfied, otherwise, arr should be returned as an empty array.
 
 
 /* Initial content
