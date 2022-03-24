@@ -34,12 +34,13 @@ orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 function orbitalPeriod(arr) {
   const GM = 398600.4418;
   const earthRadius = 6367.4447;
-  arr.forEach(object => { name : object[0], orbitalPeriod : 2*Math.PI()*(Math.pow(3, earthRadius+object[1])/Math.pow(0.5, GM))
-    
+  return arr.map(({name, avgAlt}) => { 
+    const orbitalPeriod = Math.round(2 * Math.PI * Math.pow((Math.pow((earthRadius + avgAlt), 3)/GM), 0.5));
+    return {name, orbitalPeriod};
   });
-  //t = 2pi(apow3/GM)pow1/2
-  return arr;
 }
+
+console.log(orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]));
 
 orbitalPeriod([{name : "sputnik", avgAlt : 35873.5553}]);
 
